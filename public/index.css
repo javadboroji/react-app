@@ -1,0 +1,7 @@
+@font-face{
+    font-family: 'iranyekan';
+    src: url('./fonts/iranyekanweblight.woff');
+}
+body{
+    font-family: 'iranyekan' !important;
+}
