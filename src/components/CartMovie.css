@@ -1,0 +1,27 @@
+.img-box{
+    display: block;
+    padding: 3px;
+    height: 350px;
+}
+.img-box img{
+    width: 100%;
+    height:150px;
+    object-fit: scale-down;
+}
+.button-customize{
+  
+    margin: 0 5px;
+   
+}
+.btn_reletive_box{
+    position: relative;
+  
+    display: flex;
+    justify-content: end;
+}
+.fa{
+    font-size: 14px !important;
+}
+.input-group>.form-control, .input-group>.form-select {
+    padding: 10px;
+}

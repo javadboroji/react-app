@@ -5,3 +5,17 @@
 body{
     font-family: 'iranyekan' !important;
 }
+a{
+    text-decoration: none !important;
+}
+input{
+    background-color: #212529 !important;
+    color: #0d6efd !important;
+}
+image{
+    width: 250px;
+    height: 200px;
+}
+ul{
+    list-style: none;
+}
