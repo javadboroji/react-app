@@ -1,33 +1,28 @@
-import React from 'react'
-import{Route,Switch,BrowserRouter as Router} from 'react-router-dom'
-import Whatched from './components/whatched'
-import WhatchList from './components/WhatchList'
-import Add from './components/Add'
-import Header from './components/Header'
+import React,{useState,useContext} from 'react'
 import './App.css'
-
+import Main from './Components/Main'
+import Quize from './Components/Quize'
+import EndScreen from './Components/EndScreen'
+import { QuizeContext } from './Helper/Context'
 
 export default function App() {
 
+const [gameState, setGameState] = useState('menu')
+const [score, setScore] = useState(0)
+
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/" exact>
-          <WhatchList />
-        </Route>
-        <Route path="/Whatched" exact>
-          <Whatched />
-        </Route>
-        <Route path="/add" exact>
-          <Add />
-        </Route>
-      </Switch>
-    </Router>
-   
-    
+    <div className="app">
+      <h1 className='text-white'> Quize App</h1>
+      <QuizeContext.Provider value={{gameState,setGameState,score,setScore}}>
+      {gameState==="menu"&&<div> <Main /></div>}
+      {gameState==="Quize"&&<div> <Quize /></div>}
+      {gameState==="EndScreen"&&<div> <EndScreen /></div>}
+      </QuizeContext.Provider>
+
+      
+
+    </div>
+
+
   )
 }
-
-
-
