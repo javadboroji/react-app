@@ -1,17 +1,24 @@
 body {
   margin: 0;
   padding: 0;
-  direction: rtl;
+
 }
-button{
-  padding:10px;
-  outline:none;
-  background-color:#3949ab;
-  color:#ffff;
-  border:none;
-  border-radius:5px;
-  
+a{
+  text-decoration: none;
 }
-main{
-  min-height: 80vh;
+
+
+@media (min-width: 768px) {
+
+}
+@media screen and (max-width: 980px) {
+ 
+}
+@media screen and (max-width:760px) {
+
+}
+@media screen and (max-width: 540px) {
+ 
+
+ 
 }

@@ -1,33 +1,40 @@
-import React from 'react'
-import{Route,Switch,BrowserRouter as Router} from 'react-router-dom'
-import Whatched from './components/whatched'
-import WhatchList from './components/WhatchList'
-import Add from './components/Add'
-import Header from './components/Header'
+import React,{useState,useContext} from 'react'
+import { Container ,Row} from 'react-bootstrap'
 import './App.css'
+import Products from './Components/Products';
+import data from './data.json'
 
-
-export default function App() {
-
+class App extends React.Component  {
+constructor(){
+  super();
+  this.state={
+    products:data.products,
+    size:""
+  }
+}
+render(){
+ 
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/" exact>
-          <WhatchList />
-        </Route>
-        <Route path="/Whatched" exact>
-          <Whatched />
-        </Route>
-        <Route path="/add" exact>
-          <Add />
-        </Route>
-      </Switch>
-    </Router>
-   
-    
+    <div className="app">
+ 
+    <Container fluid>
+      <Row>
+        <header className='p-3'> <a href='#'> React shopp Cart</a></header>
+        <main> 
+          <div className='main'><Products products={this.state.products}/></div>
+          <div className='sidebar '>CartItem</div>
+
+        
+        </main>
+        <footer className='p-3 text-center'> <p>All right reservered</p></footer>
+      </Row>
+    </Container>
+      
+
+    </div>
+
+
   )
 }
-
-
-
+}
+export default App
