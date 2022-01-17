@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+body{
+    font-family: 'Dongle', sans-serif;
+}
 header ,footer{
     background-color: rgb(3, 12, 47);
 }
@@ -10,5 +14,24 @@ a:hover{
     color: tomato;
 }
 main{
-    height: 100vh;
+
+    display: flex;
+}
+.main{
+display: flex;
+flex: 3;
+}
+.sidebar{
+    display: flex;
+flex: 1;
+}
+.image{
+    width: 100%;
+}
+.price{
+    font-size: 18px;
+    margin: auto;
+    font-weight: 800;
+    text-align: center;
+    padding: 5px;
 }
