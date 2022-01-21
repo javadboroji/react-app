@@ -20,6 +20,7 @@ main{
 .main{
 display: flex;
 flex: 3;
+flex-direction: column;
 }
 .sidebar{
     display: flex;
@@ -34,4 +35,13 @@ flex: 1;
     font-weight: 800;
     text-align: center;
     padding: 5px;
+}
+.filter{
+    display: flex;
+
+    padding:.5rem 1rem;
+    border-bottom: 1px solid rgb(170, 167, 167);
+}
+.filter-sort{
+    margin: 0 5rem;
 }

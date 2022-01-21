@@ -4,10 +4,10 @@ import formatCurrency from '../utill'
 export default function Products({products}) {
     return (
         <div>
-            <Container>
+            <Container >
                 <Row>
                 {products.map((product)=>(
-                        <Col md="3" className='p-2 m-3'  key={product._id}>
+                        <Col md="4" className='p-2 m-3'  key={product._id}>
                             
                             <div className='product'>
                                 <a href='#'>
