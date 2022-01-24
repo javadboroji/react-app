@@ -45,3 +45,33 @@ flex: 1;
 .filter-sort{
     margin: 0 5rem;
 }
+.cartitem-header{
+    padding:.5rem 2rem;
+    border-bottom: 1px solid rgb(170, 167, 167);
+    height: fit-content;
+    width: 90%;
+    margin: 0px auto;
+}
+.cart-item-main{
+    display: flex;
+    flex-direction: column;
+}
+.cart-img{
+    width: 100%;
+}
+.cart-img img{
+    width: 70px;
+}
+.cart{
+    padding: 15px;
+}
+.item{
+    padding: 15px;
+}
+.totla{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-top:1px solid rgb(170, 167, 167); ;
+}

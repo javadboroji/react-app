@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Container, Row,Col} from 'react-bootstrap'
 import formatCurrency from '../utill'
-export default function Products({products}) {
+export default function Products({products,addToCart}) {
     return (
         <div>
             <Container >
@@ -17,7 +17,7 @@ export default function Products({products}) {
                             </div>
                             <div className='d-flex justify-content-between p-1'>
                                 <div className='price'> {formatCurrency( product.price)}</div>
-                                <Button variant="success">Add To Cart</Button>{' '}
+                                <Button variant="success" onClick={()=>addToCart(product)}>Add To Cart</Button>{' '}
                             </div>
                         </Col>
                     )
