@@ -1,6 +1,7 @@
 import React,{useState,useContext} from 'react'
 import { Container ,Row} from 'react-bootstrap'
 import './App.css'
+import CartItem from './Components/CartItem';
 import Products from './Components/Products';
 import data from './data.json'
 import Filter from './Filter';
@@ -11,9 +12,37 @@ constructor(props){
   this.state={
     products:data.products,
     size:"",
-    sort:""
+    sort:"",
+    cartItem:[]
   }
   this.sortProducts=this.sortProducts.bind(this)
+}
+
+removeFromCart =(product)=>{
+  const cartItems=this.state.cartItem.slice();
+  this.setState({
+    cartItem:cartItems.filter((x)=>x._id !== product._id)
+  })
+}
+
+addToCart=(product)=>{
+const cartItems=this.state.cartItem.slice();
+
+let alreadyInCart=false;
+
+cartItems.forEach((item)=>{
+    //if exact product incresses counnt
+    if(item._id === product._id){
+      item.count++;
+      alreadyInCart=true;
+
+    }
+});
+  //if not exact product push product in cartitems and counnt:1
+  if(!alreadyInCart){
+    cartItems.push({...product,count:1});
+  }
+  this.setState({cartItem:cartItems})
 }
 sortProducts(evn){
   //imp
@@ -71,10 +100,10 @@ render(){
 
              ></Filter>
           
-            <Products products={this.state.products}/> 
+            <Products products={this.state.products} addToCart={(product)=>this.addToCart(product)}/> 
             </div>
 
-          <div className='sidebar '>CartItem</div>
+          <div className='sidebar '><CartItem  CartItem={this.state.cartItem} removeFromCart={this.removeFromCart}/></div>
 
         
         </main>
