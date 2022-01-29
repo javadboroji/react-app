@@ -41,7 +41,7 @@ export default function CartItem({CartItem,removeFromCart}) {
      (<div> You have {CartItem.length}in the Cart {" "} </div>)}
       </div>
      <div className='cart'>
-       <Fade left>
+       <Fade left cascade>
        <ul className='cart-items'>
 
          {CartItem.map((item)=>(
