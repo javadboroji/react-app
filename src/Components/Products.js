@@ -1,13 +1,18 @@
 import React from 'react'
 import {Button, Container, Row,Col} from 'react-bootstrap'
 import formatCurrency from '../utill'
+import Fade from 'react-reveal/Fade';
+
 export default function Products({products,addToCart}) {
     return (
         <div>
             <Container >
+            <Fade bottom >
                 <Row>
+             
                 {products.map((product)=>(
-                        <Col md="4" className='p-2 m-3'  key={product._id}>
+                    
+                        <Col md="3" className='p-2 m-3'  key={product._id}>
                             
                             <div className='product'>
                                 <a href='#'>
@@ -20,9 +25,11 @@ export default function Products({products,addToCart}) {
                                 <Button variant="success" onClick={()=>addToCart(product)}>Add To Cart</Button>{' '}
                             </div>
                         </Col>
+                 
                     )
                 )}
                 </Row>
+                </Fade>
            </Container>
             
         </div>
